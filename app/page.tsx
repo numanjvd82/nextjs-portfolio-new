@@ -6,6 +6,7 @@ import {
   useSpring,
 } from "framer-motion";
 import { useEffect, useState } from "react";
+import Hero from "./components/Hero";
 import { Navbar } from "./components/Navbar";
 
 export default function Home() {
@@ -62,6 +63,7 @@ export default function Home() {
         "
       ></motion.div>
       <Navbar setHovered={setHovered} />
+      <Hero />
     </div>
   );
 }

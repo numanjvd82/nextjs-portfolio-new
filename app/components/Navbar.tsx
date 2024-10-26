@@ -58,7 +58,7 @@ export const Navbar: React.FC<Props> = ({ setHovered }) => {
     <div className="w-full h-20 text-white mix-blend-difference">
       <div className="container mx-auto px-2 h-full">
         <div className="flex justify-between items-center h-full">
-          <h1 className="font-sans font-semibold">Numan Javed</h1>
+          <h1 className="font-sans font-semibold ">Numan Javed</h1>
           <MenuIcon className="md:hidden" />
           <Links />
         </div>
