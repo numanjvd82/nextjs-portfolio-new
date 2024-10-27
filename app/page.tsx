@@ -8,6 +8,8 @@ import {
 import { useEffect, useState } from "react";
 import Hero from "./components/Hero";
 import { Navbar } from "./components/Navbar";
+import Projects from "./components/Projects";
+import TextPath from "./components/TextPath";
 
 export default function Home() {
   const [hovered, setHovered] = useState(false);
@@ -42,7 +44,7 @@ export default function Home() {
   });
 
   return (
-    <div className="min-h-screen">
+    <div className="h-full">
       <motion.div
         initial={false}
         animate={{
@@ -64,6 +66,8 @@ export default function Home() {
       ></motion.div>
       <Navbar setHovered={setHovered} />
       <Hero />
+      <TextPath />
+      <Projects />
     </div>
   );
 }

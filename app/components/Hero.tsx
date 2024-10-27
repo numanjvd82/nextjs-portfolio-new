@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import ExperienceTag from "./ui/ExperienceTag";
 
 export default function Hero() {
   const data = {
@@ -10,32 +10,13 @@ export default function Hero() {
 
   return (
     <div
-      id="story"
       style={{
         height: "calc(100vh - 80px)",
       }}
       className="flex justify-center items-center py-20 p-2 font-sans mix-blend-difference text-white"
     >
       <div className="flex flex-col justify-center items-center">
-        <motion.div
-          style={{ touchAction: "none" }}
-          initial={{ opacity: 0, y: -30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{
-            duration: 0.7,
-          }}
-          drag="x"
-          dragConstraints={{
-            left: -50,
-            right: 50,
-          }}
-          dragSnapToOrigin
-          className="border-2 border-primary py-2 px-4 rounded-2xl"
-        >
-          <p className="font-semibold uppercase tracking-widest">
-            {data.experience}
-          </p>
-        </motion.div>
+        <ExperienceTag value={data.experience} />
         <h1 className="uppercase font-bold tracking-widest text-3xl sm:text-4xl md:text-5xl lg:text-6xl mt-5 break-words">
           {data.title}
         </h1>
@@ -46,9 +27,4 @@ export default function Hero() {
       </div>
     </div>
   );
-}
-
-{
-  /* <motion.div 
-        className="absolute -top-[6px] w-24 h-10 border-2 border-primary py-2 px-4 rounded-2xl"></motion.div> */
 }

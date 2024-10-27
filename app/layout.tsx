@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
+import SmoothScrolling from "./components/ui/SmoothScrolling";
 import "./globals.css";
 
 const aeonikRegular = localFont({
@@ -31,7 +32,7 @@ export default function RootLayout({
       <body
         className={`${aeonikRegular.variable} ${sofiaProRegular.variable}  antialiased`}
       >
-        {children}
+        <SmoothScrolling>{children}</SmoothScrolling>
       </body>
     </html>
   );

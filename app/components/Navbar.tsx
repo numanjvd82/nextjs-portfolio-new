@@ -1,4 +1,5 @@
 "use client";
+import { useLenis } from "@studio-freight/react-lenis";
 import { MenuIcon } from "lucide-react";
 import Link from "next/link";
 
@@ -7,17 +8,8 @@ type Props = {
 };
 
 export const Navbar: React.FC<Props> = ({ setHovered }) => {
+  const lenis = useLenis();
   const links = [
-    {
-      id: 1,
-      name: "Story",
-      link: "#story",
-    },
-    {
-      id: 2,
-      name: "Workflow",
-      link: "#workflow",
-    },
     {
       id: 3,
       name: "Projects",
@@ -45,8 +37,8 @@ export const Navbar: React.FC<Props> = ({ setHovered }) => {
       className="hidden md:flex gap-x-6  text-sm font-semibold font-sans relative"
     >
       {links.map(({ id, link, name }) => (
-        <li key={id}>
-          <Link href={link}>
+        <li onClick={() => lenis?.scrollTo(link)} key={id}>
+          <Link href="">
             <p>{name.toUpperCase()}</p>
           </Link>
         </li>
