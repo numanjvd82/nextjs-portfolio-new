@@ -17,8 +17,6 @@ export default function TextPath() {
       }
     });
 
-    console.log("rendering");
-
     return () => {
       scrollYProgress.clearListeners();
     };
