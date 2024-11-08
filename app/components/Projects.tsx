@@ -30,7 +30,7 @@ export default function Projects() {
   );
 
   return (
-    <div ref={container} id="projects" className="px-6 py-20 mt-[50vh]">
+    <div ref={container} id="projects" className="px-6 pt-20 pb-10 mt-[50vh]">
       <h1 className="uppercase font-bold tracking-widest text-3xl sm:text-4xl md:text-5xl lg:text-6xl mt-5 break-words text-center font-serif mb-10 text-white mix-blend-difference">
         Projects
       </h1>

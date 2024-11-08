@@ -22,19 +22,19 @@ export default function TextPath() {
     };
   }, [scrollYProgress]);
 
-  const textPathString = `I'm writing my story so that others might see fragments of
-            themselves"`;
+  const textPathString = `"Controlling complexity is the essence of computer programming"`;
 
   return (
     <div ref={container}>
-      <svg className="w-full mb-40" viewBox="0 0 250 90">
+      <svg className=" w-full mb-40" viewBox="0 0 250 90">
         <path
+          className=""
           fill="none"
           id="curve"
           d="m0,88.5c61.37,0,61.5-68,126.5-68,58,0,51,68,123,68"
         />
 
-        <text className="text-[6px] uppercase " style={{ fill: "black" }}>
+        <text className="text-[8px] uppercase " style={{ fill: "black" }}>
           <textPath
             ref={(ref) => {
               if (!ref) return;
