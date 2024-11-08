@@ -8,7 +8,7 @@ export const projects = [
             suscipit!`,
     githubLink: "https://www.github.com",
     liveAppLink: "https://multi-cipher-framework",
-    imagePath: "/project-1.jpeg",
+    imagePath: "/assets/projects/project-1.jpeg",
   },
   {
     id: 2,
@@ -19,7 +19,7 @@ export const projects = [
             suscipit!`,
     githubLink: "https://www.github.com",
     liveAppLink: "https://multi-cipher-framework",
-    imagePath: "/project-1.jpeg",
+    imagePath: "/assets/projects/project-1.jpeg",
   },
   {
     id: 3,
@@ -30,7 +30,7 @@ export const projects = [
             suscipit!`,
     githubLink: "https://www.github.com",
     liveAppLink: "https://multi-cipher-framework",
-    imagePath: "/project-1.jpeg",
+    imagePath: "/assets/projects/project-1.jpeg",
   },
   {
     id: 4,
@@ -41,7 +41,7 @@ export const projects = [
             suscipit!`,
     githubLink: "https://www.github.com",
     liveAppLink: "https://multi-cipher-framework",
-    imagePath: "/project-1.jpeg",
+    imagePath: "/assets/projects/project-1.jpeg",
   },
   {
     id: 5,
@@ -52,7 +52,7 @@ export const projects = [
             suscipit!`,
     githubLink: "https://www.github.com",
     liveAppLink: "https://multi-cipher-framework",
-    imagePath: "/project-1.jpeg",
+    imagePath: "/assets/projects/project-1.jpeg",
   },
 ];
 
