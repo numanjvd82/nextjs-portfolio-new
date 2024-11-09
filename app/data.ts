@@ -1,58 +1,43 @@
 export const projects = [
   {
     id: 1,
-    name: "Multi Cipher Framework",
-    technologies: ["HTML", "CSS", "NextJS", "Typescript", "Algorithims"],
-    description: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque
-            tempore libero hic ea. Nihil ratione aliquam sunt magnam esse
-            suscipit!`,
-    githubLink: "https://www.github.com",
-    liveAppLink: "https://multi-cipher-framework",
-    imagePath: "/assets/projects/project-1.jpeg",
+    name: "Pass Keeper",
+    technologies: ["NextJS", "Cryptography", "Encryption", "Algorithims"],
+    description: `Pass Keeper is a practical and secure password manager app built with ReactJS, designed to provide a seamless and user-friendly experience. Featuring a modern and sleek interface, Pass Keeper makes managing your passwords intuitive and efficient.`,
+    githubLink: "https://github.com/numanjvd82/pass-keeper",
+    imagePath: "/assets/projects/project-5.png",
   },
   {
     id: 2,
     name: "Multi Cipher Framework",
-    technologies: ["HTML", "CSS", "NextJS", "Typescript", "Algorithims"],
-    description: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque
-            tempore libero hic ea. Nihil ratione aliquam sunt magnam esse
-            suscipit!`,
-    githubLink: "https://www.github.com",
+    technologies: ["ReactJS", "Cryptography", "Typescript", "Algorithims"],
+    description: `Built with React, this project pairs powerful cipher functions with a sleek and intuitive user interface, providing users with a seamless experience. Each cipher comes with customizable settings, allowing users to easily encrypt and decrypt messages while understanding the mechanics behind these historical encryption techniques.`,
+    githubLink: "https://multicipherframework.netlify.app/",
     liveAppLink: "https://multi-cipher-framework",
-    imagePath: "/assets/projects/project-1.jpeg",
+    imagePath: "/assets/projects/project-2.jpeg",
   },
   {
     id: 3,
-    name: "Multi Cipher Framework",
-    technologies: ["HTML", "CSS", "NextJS", "Typescript", "Algorithims"],
-    description: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque
-            tempore libero hic ea. Nihil ratione aliquam sunt magnam esse
-            suscipit!`,
-    githubLink: "https://www.github.com",
-    liveAppLink: "https://multi-cipher-framework",
-    imagePath: "/assets/projects/project-1.jpeg",
+    name: "Text to Image Converter",
+    technologies: ["AI", "Machine Learning", "NextJS", "Typescript", "ShadCN"],
+    description: `Welcome to AI Toolkit, a Next.js project built with ShadCN UI and powered by Hugging Face models. This project aims to automate classical tasks with AI tools. Currently, it supports generating images from text prompts, with more features coming soon!`,
+    githubLink: "https://github.com/numanjvd82/nextjs-ai-toolkit",
+    imagePath: "/assets/projects/project-1.png",
   },
   {
     id: 4,
-    name: "Multi Cipher Framework",
-    technologies: ["HTML", "CSS", "NextJS", "Typescript", "Algorithims"],
-    description: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque
-            tempore libero hic ea. Nihil ratione aliquam sunt magnam esse
-            suscipit!`,
-    githubLink: "https://www.github.com",
-    liveAppLink: "https://multi-cipher-framework",
-    imagePath: "/assets/projects/project-1.jpeg",
-  },
-  {
-    id: 5,
-    name: "Multi Cipher Framework",
-    technologies: ["HTML", "CSS", "NextJS", "Typescript", "Algorithims"],
-    description: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque
-            tempore libero hic ea. Nihil ratione aliquam sunt magnam esse
-            suscipit!`,
-    githubLink: "https://www.github.com",
-    liveAppLink: "https://multi-cipher-framework",
-    imagePath: "/assets/projects/project-1.jpeg",
+    name: "Wilderness Weather App",
+    technologies: [
+      "Data Transformation",
+      "Graphs",
+      "Server Side",
+      "Typescript",
+      "AntD",
+    ],
+    description: `This project is a weather dashboard application built using React and Ant Design (Antd). The application displays various weather-related data fetched from the Open Meteo API, including current weather, hourly forecasts, daily forecasts, and additional information like air quality, UV index, and dust and pollen levels.`,
+    githubLink: "https://github.com/numanjvd82/nextjs-ai-toolkit",
+    liveAppLink: "https://wilderness-weather-station.netlify.app",
+    imagePath: "/assets/projects/project-3.png",
   },
 ];
 
