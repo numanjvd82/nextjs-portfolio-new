@@ -10,8 +10,8 @@ type Project = {
   name: string;
   technologies: string[];
   description: string;
-  githubLink: string | undefined;
-  liveAppLink: string | undefined;
+  githubLink?: string;
+  liveAppLink?: string;
   imagePath: string;
 };
 
@@ -81,7 +81,7 @@ const Card: React.FC<Props> = ({
           className="flex-grow overflow-hidden"
         >
           <Image
-            className="rounded-xl object-cover w-full h-auto"
+            className="rounded-xl object-cover w-[500px] min-w-[200px] h-auto"
             width={0}
             height={0}
             src={imagePath}
