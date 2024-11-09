@@ -25,7 +25,7 @@ export default function TextPath() {
   const textPathString = `"Controlling complexity is the essence of computer programming"`;
 
   return (
-    <div ref={container}>
+    <div className="cursor-auto md:cursor-none" ref={container}>
       <svg className=" w-full mb-40" viewBox="0 0 250 90">
         <path
           className=""

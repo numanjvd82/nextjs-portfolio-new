@@ -14,7 +14,7 @@ export default function CTA() {
   return (
     <div
       id="contacts"
-      className="h-[60vh] flex flex-col justify-center items-center p-4"
+      className="cursor-auto md:cursor-none h-[60vh] flex flex-col justify-center items-center p-4"
     >
       <motion.h1
         className="uppercase font-bold tracking-widest text-2xl sm:text-3xl md:text-4xl lg:text-5xl mt-5 break-words text-center font-serif mb-5 text-white mix-blend-difference"

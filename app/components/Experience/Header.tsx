@@ -1,6 +1,8 @@
+"use client";
 import { experienceSectionText } from "@/app/data";
-import { motion } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 import { DotIcon } from "lucide-react";
+import { useRef } from "react";
 import { headerLeftVariants, headerRightVariants } from "./variants";
 
 const wordRevealVariants = {
@@ -19,47 +21,57 @@ const wordRevealVariants = {
   }),
 };
 
-const splitText = (text: string) => {
-  return text.split(" ").map((word, index) => (
-    <motion.span key={index} variants={wordRevealVariants} custom={index}>
-      {word}{" "}
-    </motion.span>
-  ));
+const SplitText: React.FC<{ text: string }> = ({ text }) => {
+  return (
+    <>
+      {text.split(" ").map((word, index) => (
+        <motion.span key={index} variants={wordRevealVariants} custom={index}>
+          {word}{" "}
+        </motion.span>
+      ))}
+    </>
+  );
 };
 
 export const Header = () => {
+  const ref = useRef<HTMLDivElement>(null);
+  const isInView = useInView(ref, { once: false, amount: 0.5 });
+
   return (
-    <div className="flex flex-col sm:flex-row sm:justify-between items-center mb-20 text-white mix-blend-difference">
+    <div
+      ref={ref}
+      className="flex flex-col sm:flex-row sm:justify-between items-center mb-20 text-white mix-blend-difference"
+    >
       <div className="flex-1">
         <motion.div
           initial="initial"
-          animate="animate"
+          animate={isInView ? "animate" : "initial"}
           variants={headerLeftVariants}
           className="flex items-center"
         >
           <DotIcon />
           <h1 className="uppercase font-bold tracking-widest text-md break-words text-center font-serif">
-            {splitText("Experience")}
+            <SplitText text="Experience" />
           </h1>
         </motion.div>
         <motion.p
           initial="initial"
-          animate="animate"
+          animate={isInView ? "animate" : "initial"}
           variants={headerLeftVariants}
           className="
-    uppercase font-bold tracking-widest text-lg sm:text-xl md:text-2xl lg:text-3xl mt-5 break-words text-left font-serif mb-10 
-    "
+            uppercase font-bold tracking-widest text-lg sm:text-xl md:text-2xl lg:text-3xl mt-5 break-words text-left font-serif mb-10 
+          "
         >
-          {splitText("Explore my journey")}
+          <SplitText text="Explore my journey" />
         </motion.p>
       </div>
       <motion.p
         initial="initial"
-        animate="animate"
+        animate={isInView ? "animate" : "initial"}
         variants={headerRightVariants}
         className="text-sm font-sans w-[300px]"
       >
-        {splitText(experienceSectionText)}
+        <SplitText text={experienceSectionText} />
       </motion.p>
     </div>
   );

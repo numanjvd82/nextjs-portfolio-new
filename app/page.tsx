@@ -29,7 +29,7 @@ export default function Home() {
           damping: 20,
           stiffness: 300,
         }}
-        className="
+        className="hidden md:block
           bg-black rounded-full fixed pointer-events-none
         "
       ></motion.div>

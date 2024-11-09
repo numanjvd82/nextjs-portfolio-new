@@ -14,7 +14,7 @@ export default function Hero() {
       style={{
         height: "calc(100vh - 80px)",
       }}
-      className="flex justify-center items-center py-20 p-2 font-sans mix-blend-difference text-white"
+      className="cursor-auto md:cursor-none flex justify-center items-center py-20 p-2 font-sans mix-blend-difference text-white"
     >
       <div className="flex flex-col justify-center items-center">
         <ExperienceTag value={data.experience} />
