@@ -7,7 +7,6 @@ import { useRef } from "react";
 import { socials } from "../data";
 
 const EMAIL = "numanjaved2001@gmail.com";
-const RESUME_PATH = `${process.env.NEXT_PUBLIC_HOST}/assets/Resume.pdf`;
 export default function Footer() {
   const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, { once: false });
@@ -49,13 +48,13 @@ export default function Footer() {
       >
         <Link
           className=""
-          href={RESUME_PATH}
+          href="/assets/Resume.pdf"
           target="_blank"
           rel="noopener noreferrer"
           locale={false}
         >
           <Canvas
-            text={RESUME_PATH}
+            text="/assets/Resume.pdf"
             options={{
               errorCorrectionLevel: "M",
               margin: 3,
