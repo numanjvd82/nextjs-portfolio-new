@@ -1,6 +1,8 @@
 "use client";
 import { motion } from "framer-motion";
+import CTA from "./components/Cta";
 import Experience from "./components/Experience";
+import Footer from "./components/Footer";
 import Hero from "./components/Hero";
 import { Navbar } from "./components/Navbar";
 import Projects from "./components/Projects";
@@ -36,6 +38,8 @@ export default function Home() {
       <TextPath />
       <Projects />
       <Experience />
+      <CTA />
+      <Footer />
     </div>
   );
 }

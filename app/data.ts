@@ -112,3 +112,8 @@ export const experiences: Experience[] = [
     },
   },
 ];
+
+export const socials = {
+  linkedin: "https://www.linkedin.com/in/numan-javed-1ba2b4315/",
+  github: "https://www.github.com/numanjvd82",
+};
