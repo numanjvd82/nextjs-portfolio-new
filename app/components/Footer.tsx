@@ -7,7 +7,7 @@ import { useRef } from "react";
 import { socials } from "../data";
 
 const EMAIL = "numanjaved2001@gmail.com";
-const RESUME_PATH = "/assets/Resume.pdf";
+const RESUME_PATH = `${process.env.NEXT_PUBLIC_HOST}/assets/Resume.pdf`;
 export default function Footer() {
   const ref = useRef<HTMLDivElement>(null);
   const isInView = useInView(ref, { once: false });
