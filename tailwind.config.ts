@@ -16,6 +16,7 @@ const config: Config = {
         background: "var(--background)",
         foreground: "var(--foreground)",
         secondary: "var(--border-color)",
+        tertiary: "var(--tertiary)",
       },
     },
   },

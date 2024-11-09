@@ -5,7 +5,7 @@ import { headerLeftVariants, headerRightVariants } from "./variants";
 
 export const Header = () => {
   return (
-    <div className="flex flex-col sm:flex-row sm:justify-between items-center mb-20">
+    <div className="flex flex-col sm:flex-row sm:justify-between items-center mb-20 text-white mix-blend-difference">
       <div className="flex-1">
         <motion.div
           initial="initial"

@@ -1,11 +1,11 @@
+import { Experience } from "@/app/data";
 import { motion, useAnimate, ValueAnimationTransition } from "framer-motion";
-import { ArrowDown } from "lucide-react";
+import { ArrowDown, SquareArrowOutUpRightIcon } from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
 import { useState } from "react";
 
-type Detail = {
-  imagePaths: string[];
-  description: string;
-};
+type Detail = Experience["details"];
 
 type Props = {
   details?: Detail;
@@ -14,6 +14,8 @@ type Props = {
 export const Detail: React.FC<Props> = ({ details }) => {
   const [showDetails, setShowDetails] = useState<boolean>(false);
   const [scope, animate] = useAnimate();
+
+  const MotionLink = motion(Link);
 
   if (!details) return null;
 
@@ -49,15 +51,54 @@ export const Detail: React.FC<Props> = ({ details }) => {
       <motion.div
         ref={scope}
         initial={{ opacity: 0, height: 0, marginTop: 0 }}
-        className="overflow-hidden"
+        className="overflow-hidden my-5"
       >
-        <h1>{details.description}</h1>
+        <div className="flex flex-col sm:flex-row sm:justify-between items-center gap-2">
+          {details.imagePaths ? (
+            <div className="flex justify-center flex-wrap gap-2">
+              {details.imagePaths.map((path, i) => (
+                <Image
+                  key={i}
+                  src={path}
+                  sizes="100vw"
+                  alt={"Experience" + i}
+                  className="object-cover rounded-2xl cursor-auto w-full h-auto min-w-[150px] max-w-[200px]"
+                  width={200}
+                  height={150}
+                />
+              ))}
+            </div>
+          ) : null}
+          <p className="sm:basis-1/3 text-sm font-sans text-white mix-blend-difference mt-2">
+            {details.description}
+          </p>
+
+          {details.companyWebsite ? (
+            <MotionLink
+              target="_blank"
+              href={details.companyWebsite}
+              whileHover={{
+                scale: 1.1,
+                rotate: 360,
+              }}
+              transition={{
+                type: "spring",
+                duration: 0.7,
+                bounce: 0.2,
+              }}
+              onClick={handleClick}
+              className="grid place-items-center mt-5 text-white mix-blend-difference"
+            >
+              <SquareArrowOutUpRightIcon size={27} />
+            </MotionLink>
+          ) : null}
+        </div>
       </motion.div>
 
       <motion.div
         whileHover={{
           scale: 1.1,
-          translateY: 10,
+          translateY: showDetails ? -10 : 10,
         }}
         transition={{
           type: "spring",
@@ -74,9 +115,9 @@ export const Detail: React.FC<Props> = ({ details }) => {
           },
         }}
         onClick={handleClick}
-        className="grid place-items-center mt-5 cursor-pointer"
+        className="grid place-items-center mt-5 text-white mix-blend-difference"
       >
-        <ArrowDown size={35} />
+        <ArrowDown size={27} />
       </motion.div>
     </>
   );
