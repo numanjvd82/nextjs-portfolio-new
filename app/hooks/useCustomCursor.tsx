@@ -28,11 +28,6 @@ export default function useCustomCursor() {
   };
 
   useEffect(() => {
-    const initialX = window.innerWidth / 2;
-    const initialY = window.innerHeight / 2;
-    mousePosition.x.set(initialX - CURSOR_SIZE / 2);
-    mousePosition.y.set(initialY - CURSOR_SIZE / 2);
-
     window.addEventListener("mousemove", handleMouseMove);
 
     return () => {

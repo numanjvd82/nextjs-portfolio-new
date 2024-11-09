@@ -48,7 +48,7 @@ export const Navbar: React.FC<Props> = ({ setHovered }) => {
 
   return (
     <div className="cursor-auto md:cursor-none w-full h-20 text-white mix-blend-difference">
-      <div className="container mx-auto px-2 h-full">
+      <div className="container mx-auto p-2 h-full">
         <div className="flex justify-between items-center h-full">
           <h1
             onMouseEnter={handleMouseEnter}
