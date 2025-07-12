@@ -40,7 +40,7 @@ export const Header = () => {
   return (
     <div
       ref={ref}
-      className="flex flex-col sm:flex-row sm:justify-between items-center mb-12 sm:mb-16 md:mb-20 text-white mix-blend-difference"
+      className="flex flex-col sm:flex-row sm:justify-between items-center mb-12 sm:mb-16 md:mb-20 text-white mix-blend-difference mt-10"
     >
       <div className="flex-1 text-center sm:text-left mb-6 sm:mb-0">
         <motion.div

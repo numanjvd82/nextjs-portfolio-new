@@ -63,7 +63,7 @@ export default function FAQ() {
             whileHover={{ scale: 1.02 }}
             transition={{ duration: 0.2 }}
           >
-            About Me!
+            How I work!
           </motion.h2>
           <motion.p
             className="text-lg  max-w-2xl mx-auto leading-relaxed"
@@ -71,8 +71,9 @@ export default function FAQ() {
             animate={isInView ? { opacity: 1 } : { opacity: 0 }}
             transition={{ delay: 0.3, duration: 0.5 }}
           >
-            Got questions? I&apos;ve got answers. Here are some of the most
-            common questions I receive about my work and process.
+            I believe in a collaborative approach to projects, where ideas are
+            shared, refined, and executed with precision. My process is
+            transparent, ensuring you&apos;re involved every step of the way.
           </motion.p>
         </motion.div>
 

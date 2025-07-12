@@ -5,17 +5,16 @@ import { Detail } from "./Detail";
 
 export const Experiences = () => {
   return (
-    <>
+    <div className="space-y-0">
       {experiences.map(
         ({ companyName, details, duration, id, roles, tags }, i) => (
           <div
             key={id}
-            className={`border-b-[1px] border-secondary ${
-              details ? "p-4 sm:p-6 md:p-8" : "p-4 sm:p-6 md:p-8"
-            }`}
+            className="border-b-[1px] border-secondary p-4 sm:p-6 md:p-8"
           >
-            <div className="flex flex-col gap-4 items-center justify-center lg:flex-row lg:justify-between text-white mix-blend-difference">
-              <div className="flex-grow text-center lg:text-left">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 lg:gap-6 items-start text-white mix-blend-difference">
+              {/* Company Name and Duration */}
+              <div className="lg:col-span-4 text-center lg:text-left">
                 <h2 className="tracking-widest text-lg sm:text-xl md:text-2xl break-words font-sans">
                   {companyName}
                 </h2>
@@ -26,12 +25,16 @@ export const Experiences = () => {
                   </p>
                 </div>
               </div>
-              <div className="text-center lg:text-left lg:basis-1/4 xl:basis-1/5">
+
+              {/* Roles */}
+              <div className="lg:col-span-4 text-center lg:text-left">
                 <p className="tracking-widest break-words text-sm sm:text-base font-sans">
                   {roles.join(", ")}
                 </p>
               </div>
-              <div className="flex items-center justify-center lg:justify-start flex-wrap gap-2 lg:basis-1/4 xl:basis-1/5">
+
+              {/* Tags */}
+              <div className="lg:col-span-4 flex items-center justify-center lg:justify-start flex-wrap gap-2">
                 {tags.map((tech, i) => (
                   <Badge key={i} title={tech} />
                 ))}
@@ -42,6 +45,6 @@ export const Experiences = () => {
           </div>
         )
       )}
-    </>
+    </div>
   );
 };

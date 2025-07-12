@@ -152,15 +152,17 @@ export const Navbar: React.FC<Props> = ({ setHovered }) => {
   return (
     <>
       <motion.div
-        className="cursor-auto md:cursor-none w-full text-white mix-blend-difference fixed top-0 left-0 right-0 z-50"
+        className={`cursor-auto md:cursor-none w-full md:mix-blend-difference fixed top-0 left-0 right-0 z-50 ${
+          isScrolled ? "text-black md:text-white " : "md:text-white"
+        }`}
         animate={{
           height: isScrolled ? "60px" : "80px",
           backgroundColor: isScrolled
-            ? "rgba(0, 0, 0, 0.8)"
-            : "rgba(0, 0, 0, 0)",
+            ? "rgba(0, 0, 0, 0.8)" // Dark background when scrolled
+            : "rgba(0, 0, 0, 0)", // Transparent background when not scrolled
           backdropFilter: isScrolled ? "blur(20px)" : "blur(0px)",
           borderBottom: isScrolled
-            ? "1px solid rgba(255, 255, 255, 0.1)"
+            ? "1px solid rgba(255, 255, 255, 0.1)" // Border when scrolled
             : "1px solid rgba(255, 255, 255, 0)",
         }}
         transition={{
@@ -177,7 +179,6 @@ export const Navbar: React.FC<Props> = ({ setHovered }) => {
               onMouseLeave={handleMouseLeave}
               className="font-sans font-semibold"
               animate={{
-                fontSize: isScrolled ? "1rem" : "1.125rem",
                 opacity: isScrolled ? 0.9 : 1,
               }}
               transition={{
@@ -194,7 +195,7 @@ export const Navbar: React.FC<Props> = ({ setHovered }) => {
               variants={burgerVariants}
               animate={mobileMenuOpen ? "open" : "closed"}
               onClick={toggleMobileMenu}
-              className="md:hidden relative z-50 p-2 focus:outline-none"
+              className="md:hidden relative z-[70] p-2 focus:outline-none"
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
             >
@@ -236,7 +237,7 @@ export const Navbar: React.FC<Props> = ({ setHovered }) => {
             initial="closed"
             animate="open"
             exit="closed"
-            className="fixed inset-0 bg-black/50 backdrop-blur-sm z-40 md:hidden"
+            className="fixed inset-0 bg-black/50 backdrop-blur-sm z-[60] md:hidden"
             onClick={toggleMobileMenu}
           >
             {/* Mobile Menu Container */}
@@ -250,6 +251,19 @@ export const Navbar: React.FC<Props> = ({ setHovered }) => {
             >
               {/* Menu Content */}
               <div className="flex flex-col h-full pt-24 px-8">
+                {/* Close button */}
+                <motion.button
+                  onClick={toggleMobileMenu}
+                  className="absolute top-6 right-6 p-2 text-white hover:text-gray-300 transition-colors duration-200"
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.9 }}
+                  initial={{ opacity: 0, rotate: -90 }}
+                  animate={{ opacity: 1, rotate: 0 }}
+                  transition={{ delay: 0.3 }}
+                >
+                  <X size={24} />
+                </motion.button>
+
                 {/* Decorative line */}
                 <div className="w-12 h-px bg-gradient-to-r from-white/50 to-transparent mb-8"></div>
 
