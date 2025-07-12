@@ -2,6 +2,7 @@
 import { motion } from "framer-motion";
 import CTA from "./components/Cta";
 import Experience from "./components/Experience";
+import FAQ from "./components/FAQ";
 import Footer from "./components/Footer";
 import Hero from "./components/Hero";
 import { Navbar } from "./components/Navbar";
@@ -36,6 +37,7 @@ export default function Home() {
       <Navbar setHovered={setHovered} />
       <Hero />
       <TextPath />
+      <FAQ />
       <Projects />
       <Experience />
       <CTA />

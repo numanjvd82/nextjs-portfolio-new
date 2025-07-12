@@ -118,3 +118,51 @@ export const socials = {
   linkedin: "https://www.linkedin.com/in/numan-javed-1ba2b4315/",
   github: "https://www.github.com/numanjvd82",
 };
+
+export type FAQItem = {
+  question: string;
+  answer: string;
+};
+
+export const faqData: FAQItem[] = [
+  {
+    question: "What modern web technologies do you specialize in?",
+    answer:
+      "I specialize in React, Next.js, TypeScript, Node.js, Websockets and a liitle touch of solidity and modern web development. I have experience with Three.js for 3D web experiences and I'm familiar with PostgreSQL, MongoDB and pgvector. I'm always learning and adapting to new technologies to deliver cutting-edge solutions.",
+  },
+  {
+    question: "How do you ensure pixel-perfect designs?",
+    answer:
+      "I have a keen eye for detail and take pride in delivering pixel-perfect implementations. I carefully review designs, use precise measurements, and test across multiple devices and browsers to ensure every element matches the intended design exactly.",
+  },
+  {
+    question: "Are you adaptable to new technologies and requirements?",
+    answer:
+      "Absolutely! I thrive on learning new technologies and adapting to changing project requirements. Whether it's a new framework, API, or design pattern, I quickly research, experiment, and implement solutions that meet your specific needs.",
+  },
+  {
+    question: "What's your experience with 3D web development?",
+    answer:
+      "I have hands-on experience with Three.js and have built interactive 3D projects. While I continue to expand my 3D development skills, I can create engaging 3D experiences and am eager to take on more complex 3D challenges.",
+  },
+  {
+    question: "How do you handle deployment and modern web practices?",
+    answer:
+      "I use modern deployment strategies with platforms like Vercel, Netlify, and AWS. I implement responsive design, optimize performance, ensure SEO best practices, and maintain clean, scalable code. I'm experienced with Git workflows and collaborative development.",
+  },
+  {
+    question: "Do you take ownership of projects from start to finish?",
+    answer:
+      "Yes, I take full ownership of projects and am committed to delivering exceptional results. I communicate proactively, meet deadlines, solve problems independently, and ensure the final product exceeds expectations. Your success is my priority.",
+  },
+  {
+    question: "How do you approach innovation and problem-solving?",
+    answer:
+      "I bring fresh perspectives and innovative solutions to every project. I research best practices, experiment with new approaches, and find creative ways to solve complex problems. I'm not afraid to push boundaries while maintaining code quality and user experience.",
+  },
+  {
+    question: "What can I expect from your work process?",
+    answer:
+      "You can expect transparent communication, regular updates, and meticulous attention to detail. I deliver clean, maintainable code, provide realistic timelines, and ensure every aspect of the project meets your standards. I stand behind my work with ongoing support.",
+  },
+];
