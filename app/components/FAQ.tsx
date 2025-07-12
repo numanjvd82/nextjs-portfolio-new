@@ -63,7 +63,7 @@ export default function FAQ() {
             whileHover={{ scale: 1.02 }}
             transition={{ duration: 0.2 }}
           >
-            Frequently Asked Questions
+            About Me!
           </motion.h2>
           <motion.p
             className="text-lg  max-w-2xl mx-auto leading-relaxed"

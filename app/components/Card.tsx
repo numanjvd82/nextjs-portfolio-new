@@ -2,7 +2,7 @@ import { motion, MotionValue, useScroll, useTransform } from "framer-motion";
 import { LinkIcon } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { useRef } from "react";
+import { memo, useRef } from "react";
 import Badge from "./ui/Badge";
 
 type Project = {
@@ -41,10 +41,9 @@ const Card: React.FC<Props> = ({
     enter: { translateY: 0, opacity: 1 },
   };
 
-  const imageOpacity = useTransform(scrollYProgress, [0, 1], [0.3, 1]);
-  const imageScale = useTransform(scrollYProgress, [0, 1], [0.5, 1]);
-
+  // Combine transforms for better performance
   const cardScale = useTransform(globalProgress, range, [1, targetScale]);
+  const imageTransform = useTransform(scrollYProgress, [0, 1], [0.8, 1]);
 
   const {
     id,
@@ -70,29 +69,32 @@ const Card: React.FC<Props> = ({
     >
       <motion.div
         style={{
-          background:
-            index % 2 === 0
-              ? "linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%)"
-              : "linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%)",
-          color: index % 2 === 0 ? "#1a1a1a" : "#ffffff",
           scale: cardScale,
         }}
-        className="w-[300px] sm:w-[500px] md:w-[1000px] h-auto rounded-2xl p-8 md:p-10 overflow-hidden md:flex md:justify-between gap-6 shadow-2xl border border-gray-200/20 backdrop-blur-sm"
+        className={`w-[300px] sm:w-[500px] md:w-[1000px] h-auto rounded-2xl p-8 md:p-10 overflow-hidden md:flex md:justify-between gap-6 shadow-2xl border border-gray-200/20 backdrop-blur-sm will-change-transform ${
+          index % 2 === 0
+            ? "bg-gradient-to-br from-white to-gray-50 text-gray-900"
+            : "bg-gradient-to-br from-gray-900 to-black text-white"
+        }`}
       >
         <motion.div
-          style={{ opacity: imageOpacity, scale: imageScale }}
-          className="flex-grow overflow-hidden mb-6 md:mb-0"
+          style={{
+            scale: imageTransform,
+            opacity: imageTransform,
+          }}
+          className="flex-grow overflow-hidden mb-6 md:mb-0 will-change-transform"
         >
           <div className="relative group">
             <Image
-              className="rounded-xl object-cover w-full h-auto transition-transform duration-500 group-hover:scale-105"
+              className="rounded-xl object-cover w-full h-auto transform-gpu transition-transform duration-300 group-hover:scale-[1.02]"
               width={0}
               height={0}
               src={imagePath}
               alt={`${name} project screenshot`}
               sizes="100vw"
+              priority={index < 2}
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
           </div>
         </motion.div>
 
@@ -158,4 +160,4 @@ const Card: React.FC<Props> = ({
   );
 };
 
-export default Card;
+export default memo(Card);
