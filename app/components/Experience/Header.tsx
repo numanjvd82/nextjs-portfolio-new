@@ -40,17 +40,17 @@ export const Header = () => {
   return (
     <div
       ref={ref}
-      className="flex flex-col sm:flex-row sm:justify-between items-center mb-20 text-white mix-blend-difference"
+      className="flex flex-col sm:flex-row sm:justify-between items-center mb-12 sm:mb-16 md:mb-20 text-white mix-blend-difference"
     >
-      <div className="flex-1">
+      <div className="flex-1 text-center sm:text-left mb-6 sm:mb-0">
         <motion.div
           initial="initial"
           animate={isInView ? "animate" : "initial"}
           variants={headerLeftVariants}
-          className="flex items-center"
+          className="flex items-center justify-center sm:justify-start"
         >
           <DotIcon />
-          <h1 className="uppercase font-bold tracking-widest text-md break-words text-center font-serif">
+          <h1 className="uppercase font-bold tracking-widest text-sm sm:text-md break-words font-serif">
             <SplitText text="Experience" />
           </h1>
         </motion.div>
@@ -58,9 +58,7 @@ export const Header = () => {
           initial="initial"
           animate={isInView ? "animate" : "initial"}
           variants={headerLeftVariants}
-          className="
-            uppercase font-bold tracking-widest text-lg sm:text-xl md:text-2xl lg:text-3xl mt-5 break-words text-left font-serif mb-10 
-          "
+          className="uppercase font-bold tracking-widest text-xl sm:text-2xl md:text-3xl lg:text-4xl mt-3 sm:mt-5 break-words font-serif"
         >
           <SplitText text="Explore my journey" />
         </motion.p>
@@ -69,7 +67,7 @@ export const Header = () => {
         initial="initial"
         animate={isInView ? "animate" : "initial"}
         variants={headerRightVariants}
-        className="text-sm font-sans w-[300px]"
+        className="text-sm sm:text-base font-sans w-full sm:w-[280px] md:w-[320px] lg:w-[360px] text-center sm:text-left"
       >
         <SplitText text={experienceSectionText} />
       </motion.p>
