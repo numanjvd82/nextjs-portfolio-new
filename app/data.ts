@@ -1,6 +1,22 @@
 export const projects = [
   {
     id: 1,
+    name: "Cube Master",
+    technologies: [
+      "NextJS",
+      "React Three Fiber",
+      "Three.js",
+      "Prisma",
+      "NextAuth",
+      "TypeScript",
+    ],
+    description: `A fully interactive 3D Rubik's Cube simulator with multiple game modes, user authentication, and progress tracking. Features include Classic Mode, Time Attack, Daily Challenges, Google OAuth authentication, detailed analytics, and smooth 3D animations. Built with cutting-edge web technologies for an immersive puzzle-solving experience.`,
+    githubLink: "https://github.com/numanjvd82/cubemaster",
+    liveAppLink: "https://cubemaster.vercel.app/",
+    imagePath: "/assets/projects/cube.png",
+  },
+  {
+    id: 2,
     name: "Pass Keeper",
     technologies: ["NextJS", "Cryptography", "Encryption", "Algorithims"],
     description: `Pass Keeper is a practical and secure password manager app built with ReactJS, designed to provide a seamless and user-friendly experience. Featuring a modern and sleek interface, Pass Keeper makes managing your passwords intuitive and efficient.`,
@@ -8,7 +24,7 @@ export const projects = [
     imagePath: "/assets/projects/project-5.png",
   },
   {
-    id: 2,
+    id: 3,
     name: "Multi Cipher Framework",
     technologies: ["ReactJS", "Cryptography", "Typescript", "Algorithims"],
     description: `Built with React, this project pairs powerful cipher functions with a sleek and intuitive user interface, providing users with a seamless experience. Each cipher comes with customizable settings, allowing users to easily encrypt and decrypt messages while understanding the mechanics behind these historical encryption techniques.`,
@@ -17,7 +33,7 @@ export const projects = [
     imagePath: "/assets/projects/project-2.jpeg",
   },
   {
-    id: 3,
+    id: 4,
     name: "Text to Image Converter",
     technologies: ["AI", "Machine Learning", "NextJS", "Typescript", "ShadCN"],
     description: `Welcome to AI Toolkit, a Next.js project built with ShadCN UI and powered by Hugging Face models. This project aims to automate classical tasks with AI tools. Currently, it supports generating images from text prompts, with more features coming soon!`,
@@ -25,7 +41,7 @@ export const projects = [
     imagePath: "/assets/projects/project-1.png",
   },
   {
-    id: 4,
+    id: 5,
     name: "Wilderness Weather App",
     technologies: [
       "Data Transformation",

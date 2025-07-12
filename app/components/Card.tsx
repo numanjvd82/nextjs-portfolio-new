@@ -70,51 +70,84 @@ const Card: React.FC<Props> = ({
     >
       <motion.div
         style={{
-          background: index % 2 === 0 ? "#cdcbcb" : "#232121",
-          color: index % 2 === 0 ? "black" : "white",
+          background:
+            index % 2 === 0
+              ? "linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%)"
+              : "linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%)",
+          color: index % 2 === 0 ? "#1a1a1a" : "#ffffff",
           scale: cardScale,
         }}
-        className="w-[300px] sm:w-[500px] md:w-[1000px] h-auto rounded-xl p-10 overflow-hidden md:flex md:justify-between gap-4"
+        className="w-[300px] sm:w-[500px] md:w-[1000px] h-auto rounded-2xl p-8 md:p-10 overflow-hidden md:flex md:justify-between gap-6 shadow-2xl border border-gray-200/20 backdrop-blur-sm"
       >
         <motion.div
           style={{ opacity: imageOpacity, scale: imageScale }}
-          className="flex-grow overflow-hidden"
+          className="flex-grow overflow-hidden mb-6 md:mb-0"
         >
-          <Image
-            className="rounded-xl object-cover w-[500px] min-w-[200px] h-auto"
-            width={0}
-            height={0}
-            src={imagePath}
-            alt="project-1"
-            sizes="100vw"
-          />
-        </motion.div>
-        <div className="md:w-[500px]">
-          <h1 className="uppercase font-bold tracking-widest text-2xl md:text-4xl mt-2">
-            {name}
-          </h1>
-          <p className="my-2 tracking-widest text-xl">Technologies</p>
-          <div className="mb-1 flex flex-wrap gap-2">
-            {technologies.map((tech, i) => (
-              <Badge key={i} title={tech} />
-            ))}
+          <div className="relative group">
+            <Image
+              className="rounded-xl object-cover w-full h-auto transition-transform duration-500 group-hover:scale-105"
+              width={0}
+              height={0}
+              src={imagePath}
+              alt={`${name} project screenshot`}
+              sizes="100vw"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
           </div>
-          <p>{description}</p>
+        </motion.div>
 
-          <div className="flex justify-between mt-2">
+        <div className="md:w-[500px] flex flex-col justify-between">
+          <div>
+            <h1 className="uppercase font-bold tracking-wider text-2xl md:text-3xl lg:text-4xl mb-4 leading-tight">
+              {name}
+            </h1>
+
+            <div className="mb-6">
+              <p className="text-sm font-semibold tracking-widest uppercase mb-3 opacity-70">
+                Tech Stack
+              </p>
+              <div className="flex flex-wrap gap-2">
+                {technologies.map((tech, i) => (
+                  <Badge
+                    key={i}
+                    title={tech}
+                    className={
+                      index % 2 === 0
+                        ? "bg-gradient-to-r from-blue-500/10 to-purple-500/10 border-blue-500/20 text-blue-600"
+                        : "bg-gradient-to-r from-blue-400/20 to-purple-400/20 border-blue-400/30 text-blue-300"
+                    }
+                  />
+                ))}
+              </div>
+            </div>
+
+            <p className="text-sm md:text-base leading-relaxed mb-6 opacity-90">
+              {description}
+            </p>
+          </div>
+
+          <div className="flex flex-wrap gap-4 pt-4 border-t border-gray-300/20">
             {githubLink ? (
-              <div className="flex gap-1">
-                <LinkIcon />
-                <Link target="_blank" href={githubLink}>
-                  Github
+              <div className="flex items-center gap-2 px-4 py-2 rounded-lg bg-gray-100/10 hover:bg-gray-100/20 transition-colors duration-200">
+                <LinkIcon size={16} />
+                <Link
+                  target="_blank"
+                  href={githubLink}
+                  className="text-sm font-medium hover:underline"
+                >
+                  View Code
                 </Link>
               </div>
             ) : null}
             {liveAppLink ? (
-              <div className="flex gap-1">
-                <LinkIcon />
-                <Link target="_blank" href={liveAppLink}>
-                  Live App
+              <div className="flex items-center gap-2 px-4 py-2 rounded-lg bg-blue-500/10 hover:bg-blue-500/20 transition-colors duration-200">
+                <LinkIcon size={16} />
+                <Link
+                  target="_blank"
+                  href={liveAppLink}
+                  className="text-sm font-medium hover:underline"
+                >
+                  Live Demo
                 </Link>
               </div>
             ) : null}

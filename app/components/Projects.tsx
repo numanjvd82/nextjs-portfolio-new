@@ -33,13 +33,21 @@ export default function Projects() {
     <div
       ref={container}
       id="projects"
-      className="cursor-auto md:cursor-none px-6 pt-20 pb-10 mt-[50vh]"
+      className="cursor-auto md:cursor-none px-6 pt-32 pb-20 mt-[50vh]"
     >
-      <h1 className="uppercase font-bold tracking-widest text-3xl sm:text-4xl md:text-5xl lg:text-6xl mt-5 break-words text-center font-serif mb-10 text-white mix-blend-difference">
-        Projects
-      </h1>
-      <div className="flex flex-col items-center">
-        <Cards />
+      <div className="max-w-7xl mx-auto">
+        <div className="text-center mb-16 mix-blend-difference text-white">
+          <h1 className="uppercase font-bold tracking-widest text-4xl sm:text-5xl md:text-6xl lg:text-7xl break-words font-serif  mb-4">
+            Projects
+          </h1>
+          <p className="text-lg md:text-xl  max-w-2xl mx-auto leading-relaxed">
+            A showcase of my recent work, featuring innovative solutions and
+            creative implementations across various technologies.
+          </p>
+        </div>
+        <div className="flex flex-col items-center">
+          <Cards />
+        </div>
       </div>
     </div>
   );

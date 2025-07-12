@@ -31,7 +31,7 @@ export const Experiences = () => {
               </p>
               <div className="flex items-center flex-wrap gap-2 sm:basis-1/5">
                 {tags.map((tech, i) => (
-                  <Badge className="bg-secondary" key={i} title={tech} />
+                  <Badge key={i} title={tech} />
                 ))}
               </div>
             </div>
