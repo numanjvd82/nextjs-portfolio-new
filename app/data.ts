@@ -76,7 +76,7 @@ export const experiences: Experience[] = [
   {
     id: 1,
     companyName: "Operational Software, Bristol, UK, Remote",
-    duration: `January 2023 - June 2024`,
+    duration: `August 2024 - June 2025`,
     roles: ["Full stack Developer", "JavaScript Developer", "MERN Stack"],
     tags: ["NextJS", "NodeJS", "Typescript", "Tailwind", "SQLITE"],
     details: {
@@ -92,7 +92,7 @@ export const experiences: Experience[] = [
   {
     id: 2,
     companyName: "Bytewise Ltd, Islamabad, Pakistan",
-    duration: `April 2022 - November 2022`,
+    duration: `April 2022 - November 2023`,
     roles: ["Frontend Developer", "Innovated designs", "Motion designs"],
     tags: ["React", "Typescript", "Styled Components", "Framer Motion", "GSAP"],
     details: {
@@ -103,9 +103,9 @@ export const experiences: Experience[] = [
   },
   {
     id: 3,
-    companyName: "Freelancer",
+    companyName: "Freelancer on Upwork, Remote",
     duration: `January
-    2021 - March 2022`,
+    2021 - Present`,
     roles: ["Frontend Developer", "UI/UX Designer", "Web Developer"],
     tags: ["Go", "PHP", "Wordpress", "C++", "React"],
     details: {
